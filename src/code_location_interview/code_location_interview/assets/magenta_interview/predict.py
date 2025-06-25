@@ -1,9 +1,7 @@
 import logging
 import sys
-from datetime import datetime
-import pandas as pd
 
-from dagster import asset, get_dagster_logger
+from dagster import get_dagster_logger
 
 
 log_fmt = "[%(asctime)s] %(message)s"
