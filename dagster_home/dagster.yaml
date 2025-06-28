@@ -1,0 +1,5 @@
+local_artifact_storage:
+  module: dagster.core.storage.root
+  class: LocalArtifactStorage
+  config:
+    base_dir: /workspaces/data-scientist-at-magenta/dagster_home
