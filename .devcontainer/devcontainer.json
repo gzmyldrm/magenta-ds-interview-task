@@ -22,7 +22,7 @@
 ],
 
 // Use 'postCreateCommand' to run commands after the container is created.
-"postCreateCommand": "pixi global install git && sh .devcontainer/init-git.sh && pixi install -e dev && mkdir -p /workspaces/data-scientist-at-magenta/dagster_home"
+"postCreateCommand": "pixi global install git && sh .devcontainer/init-git.sh && pixi install -e dev"
 
 // Configure tool-specific properties.
 // "customizations": {},
