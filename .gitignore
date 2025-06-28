@@ -47,3 +47,8 @@ coverage.xml
 
 # dotenv
 .env
+
+# Dagster logs
+dagster_home/storage/**/*.complete
+dagster_home/storage/**/*.err
+dagster_home/storage/**/*.out

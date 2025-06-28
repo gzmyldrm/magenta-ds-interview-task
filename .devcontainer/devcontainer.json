@@ -17,8 +17,9 @@
 },
 
 "extensions": [
-"rooveterinaryinc.roo-cline",
-"charliermarsh.ruff"
+    "rooveterinaryinc.roo-cline",
+    "charliermarsh.ruff",
+    "ms-toolsai.jupyter"
 ],
 
 // Use 'postCreateCommand' to run commands after the container is created.

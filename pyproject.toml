@@ -13,6 +13,9 @@ channels = ["conda-forge"]
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
+[dependency-groups]
+codelocation-interview = [ "pandas", "numpy", "xgboost>=3.0.2,<4", "lightgbm>=4.6.0,<5", "scikit-learn>=1.7.0,<2", "polars>=1.31.0,<2", "pyarrow>=20.0.0,<21", "pydantic>=2.11.7,<3", "optuna>=4.4.0,<5", "catboost>=1.2.8,<2"]
+
 [tool.pixi.environments]
 template = { features = ["template"], solve-group = "template" }
 ci-basics = { features = ["ci-basics"], solve-group = "ci-basics" }
@@ -100,9 +103,6 @@ dagster-docker = ">=0.25.11,<0.26"
 [tool.pixi.feature.shared-library.pypi-dependencies]
 
 [tool.pixi.feature.shared.dependencies]
-pandas = ">=2.2.3,<3"
-pyarrow = "~=18.1.0"
-pydantic = "~=2.10.6"
 
 [tool.pixi.feature.shared.pypi-dependencies]
 polars = ">=1.21.0,<2"
@@ -114,6 +114,9 @@ shared-library = { path = "./src/shared_library", editable = true }
 quickstart_etl = { path = "./src/code_location_foo", editable = true }
 
 [tool.pixi.feature.codelocation-interview.dependencies]
+matplotlib = ">=3.10.3,<4"
+plotly = ">=6.2.0,<7"
+seaborn = ">=0.13.2,<0.14"
 [tool.pixi.feature.codelocation-interview.pypi-dependencies]
 dbt-core = "~=1.9.2"
 dbt-duckdb = "~=1.9.1"
@@ -121,9 +124,6 @@ dagster-dbt = ">=0.25.11,<0.26"
 dagster-duckdb = ">=0.25.11,<0.26"
 dagster-duckdb-polars = ">=0.25.11,<0.26"
 dagster-duckdb-pandas = ">=0.25.11,<0.26"
-scikit-learn = "==1.5.2"
-xgboost = ">=2.1.2,<3"
-seaborn = ">=0.13.2,<0.14"
 code_location_interview = { path = "./src/code_location_interview", editable = true }
 
 [tool.pixi.feature.template.dependencies]
@@ -186,6 +186,9 @@ description = "decrypt secrets with SOPS and AGE"
 [tool.pixi.tasks.clean-local-branches]
 cmd = "pixi run -e ci-basics ./scripts/git_clean_local_branches.sh"
 description = "cleanup local non used branches"
+
+[tool.pixi.dependencies]
+postgresql = ">=17.5,<18"
 
 [tool.ruff]
 exclude = [
