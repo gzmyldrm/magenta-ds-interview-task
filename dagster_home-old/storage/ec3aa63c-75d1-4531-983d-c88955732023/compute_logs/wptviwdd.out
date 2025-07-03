@@ -1,0 +1,9 @@
+[2025-07-03 00:34:26] Context impl SQLiteImpl.
+[2025-07-03 00:34:26] Will assume non-transactional DDL.
+[2025-07-03 00:34:26] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - Starting model validation process
+[2025-07-03 00:34:26] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - Evaluating new model on test set
+[2025-07-03 00:34:27] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - New model metrics: F1=0.0351, Accuracy=0.7250, Precision=0.0233, Recall=0.0714
+[2025-07-03 00:34:27] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - Evaluating current model on test set
+[2025-07-03 00:34:27] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - Current model metrics: F1=0.1684, Accuracy=0.6050, Precision=0.0988, Recall=0.5714
+[2025-07-03 00:34:27] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - Current model performs better. F1 difference: -0.1333
+[2025-07-03 00:34:27] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - validate - No model update recommended

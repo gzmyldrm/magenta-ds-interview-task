@@ -1,0 +1,8 @@
+[2025-07-02 23:21:27] Context impl SQLiteImpl.
+[2025-07-02 23:21:27] Will assume non-transactional DDL.
+[2025-07-02 23:21:28] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Starting feature statistics calculation
+[2025-07-02 23:21:28] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Using processed features asset
+[2025-07-02 23:22:19] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Loaded 1000 processed feature records
+[2025-07-02 23:22:19] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Computing feature statistics
+[2025-07-02 23:22:19] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Computing statistics for 50 numerical features
+[2025-07-02 23:22:19] __ASSET_JOB - 6a826911-a254-4f2b-ac07-e56546cef555 - feature_statistics_data - Storing feature statistics in database

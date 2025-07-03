@@ -14,7 +14,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [dependency-groups]
-codelocation-interview = [ "pandas", "numpy", "xgboost>=3.0.2,<4", "lightgbm>=4.6.0,<5", "scikit-learn>=1.7.0,<2", "polars>=1.31.0,<2", "pyarrow>=20.0.0,<21", "pydantic>=2.11.7,<3", "optuna>=4.4.0,<5", "catboost>=1.2.8,<2"]
+codelocation-interview = [ "pandas", "numpy", "xgboost>=3.0.2,<4", "lightgbm>=4.6.0,<5", "scikit-learn>=1.7.0,<2", "polars>=1.31.0,<2", "pyarrow>=20.0.0,<21", "pydantic>=2.11.7,<3", "optuna>=4.4.0,<5", "catboost>=1.2.8,<2", "networkx>=3.5,<4"]
 
 [tool.pixi.environments]
 template = { features = ["template"], solve-group = "template" }

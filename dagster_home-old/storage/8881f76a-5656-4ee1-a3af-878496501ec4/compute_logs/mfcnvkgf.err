@@ -1,0 +1,17 @@
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - LOGS_CAPTURED - Started capturing logs in process (pid: 725179).
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - STEP_START - Started execution of step "validate".
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/tune using PickledObjectFilesystemIOManager...
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - LOADED_INPUT - Loaded input "tune" using input manager "io_manager", from output "result" of step "tune"
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - STEP_INPUT - Got input "tune" of type "Any". (Type check passed).
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Starting model validation process
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Evaluating new model on test set
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - New model metrics: F1=0.1551, Accuracy=0.6421, Precision=0.0930, Recall=0.4673
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Evaluating current model on test set
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Current model metrics: F1=0.1429, Accuracy=0.6191, Precision=0.0849, Recall=0.4517
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - New model performs better! F1 improvement: 0.0122
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mINFO[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Recommending model registry update
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/validate using PickledObjectFilesystemIOManager...
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - ASSET_MATERIALIZATION - Materialized value validate.
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-07-03 01:40:36 +0000[0m - dagster - [34mDEBUG[0m - training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - 725179 - validate - STEP_SUCCESS - Finished execution of step "validate" in 837ms.

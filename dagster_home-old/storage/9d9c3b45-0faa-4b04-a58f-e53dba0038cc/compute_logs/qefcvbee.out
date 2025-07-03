@@ -1,0 +1,8 @@
+[2025-07-03 01:34:25] Context impl SQLiteImpl.
+[2025-07-03 01:34:25] Will assume non-transactional DDL.
+[2025-07-03 01:34:25] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Starting feature statistics calculation
+[2025-07-03 01:34:25] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Using processed features asset
+[2025-07-03 01:34:25] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Loaded 10000 processed feature records
+[2025-07-03 01:34:25] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Computing feature statistics
+[2025-07-03 01:34:25] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Computing statistics for 50 numerical features
+[2025-07-03 01:34:26] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - feature_statistics_data - Storing feature statistics in database

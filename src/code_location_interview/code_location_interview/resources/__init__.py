@@ -1,67 +1,36 @@
-from pathlib import Path
+import os
 
-from dagster import file_relative_path, get_dagster_logger
-from dagster_dbt import DbtCliResource, DbtProject
+from dagster import get_dagster_logger
+from dagster_duckdb import DuckDBResource
+
 from shared_library.orchestration.resources.utils import (
     get_dagster_deployment_environment,
 )
 
-from .duckdb_path import DuckDBPathResource
+# Set environment variable
+# export DUCKDB_DATABASE="/path/to/my/custom/database.duckdb"
 
-DBT_PROJECT_DIR = file_relative_path(__file__, "../../code_location_interview_dbt")
-
-
-def get_dbt_project(target: str, DBT_PROJECT_DIR: str):
-    # dbt_project_path = Path(__file__).parent.parent.joinpath("dbt_project")
-    dbt_project = DbtProject(
-        project_dir=DBT_PROJECT_DIR,
-        # must sit externally i.e. on s3
-        # state_path="target/slim_ci",
-        target=target,
-    )
-    dbt_project.prepare_if_dev()
-    return dbt_project
-
-
-dbt_resource_dev = DbtCliResource(
-    project_dir=get_dbt_project(target="dev", DBT_PROJECT_DIR=DBT_PROJECT_DIR),
-    global_config_flags=["--no-use-colors"],
-    target="dev",
+# Main DuckDB resource for the data warehouse
+dev_database_resource = DuckDBResource(
+    database=os.getenv("DUCKDB_DATABASE", "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/dwh/database.duckdb")
 )
 
-dbt_resource_prod = DbtCliResource(
-    project_dir=get_dbt_project(target="prod", DBT_PROJECT_DIR=DBT_PROJECT_DIR),
-    global_config_flags=["--no-use-colors"],
-    target="prod",
+prod_database_resource = DuckDBResource(
+    database=os.getenv("PROD_DUCKDB_DATABASE", "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/dwh/production_database.duckdb")
 )
 
 RESOURCES_LOCAL = {
-    "dbt": dbt_resource_dev,
-    "ddb": DuckDBPathResource(
-        file_path=str(
-            Path(
-                "/home/heiler/development/projects/interview/interview/prototyping/tech-exploration/dagster/z_state/analytics/analytics_database_dev.duckdb"
-            )
-            .expanduser()
-            .resolve()
-        )
-    ),
+    "database": dev_database_resource
 }
 
-RESOURCES_PROD = {
-    "dbt": dbt_resource_prod,
-    "ddb": DuckDBPathResource(
-        file_path=str(
-            Path(
-                "./interview/code_location_interview_dbt/analytics_database_prod.duckdb"
-            )
-        )
-    ),
+RESOURCES_PRODUCTION = {
+    "prod_database": prod_database_resource
 }
+
 
 resource_defs_by_deployment_name = {
     "dev": RESOURCES_LOCAL,
-    "prod": RESOURCES_PROD,
+    "prod": RESOURCES_PRODUCTION
 }
 
 

@@ -1,0 +1,50 @@
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - LOGS_CAPTURED - Started capturing logs in process (pid: 346733).
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - STEP_START - Started execution of step "predictions".
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/current_model using PickledObjectFilesystemIOManager...
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - LOADED_INPUT - Loaded input "current_model" using input manager "io_manager"
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/processed_features using PickledObjectFilesystemIOManager...
+[32m2025-07-02 23:37:32 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - LOADED_INPUT - Loaded input "processed_features" using input manager "io_manager"
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - STEP_INPUT - Got input "current_model" of type "Any". (Type check passed).
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - STEP_INPUT - Got input "processed_features" of type "Any". (Type check passed).
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Starting prediction generation
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Using model: ID: model_001
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Processing 1000 feature records for prediction
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Using 49 features for prediction
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Generating predictions with model
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Generated 1000 predictions
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Positive predictions: 393 (39.300%)
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - predictions - Error during prediction generation: created_at[0m
+[32m2025-07-02 23:37:33 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 3d7b4505-04b7-4df6-8d79-f341fa485360 - 346733 - predictions - STEP_FAILURE - Execution of step "predictions" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "predictions"::
+
+polars.exceptions.ColumnNotFoundError: created_at
+
+Stack Trace:
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/predict.py", line 135, in predictions
+    "features_created_at": processed_features.select("created_at").to_series().to_list(),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/polars/dataframe/frame.py", line 9833, in select
+    .collect(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/polars/_utils/deprecation.py", line 97, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/polars/lazyframe/opt_flags.py", line 330, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/polars/lazyframe/frame.py", line 2332, in collect
+    return wrap_df(ldf.collect(engine, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

@@ -1,0 +1,9 @@
+[2025-07-03 01:40:36] Context impl SQLiteImpl.
+[2025-07-03 01:40:36] Will assume non-transactional DDL.
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Starting model validation process
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Evaluating new model on test set
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - New model metrics: F1=0.1551, Accuracy=0.6421, Precision=0.0930, Recall=0.4673
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Evaluating current model on test set
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Current model metrics: F1=0.1429, Accuracy=0.6191, Precision=0.0849, Recall=0.4517
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - New model performs better! F1 improvement: 0.0122
+[2025-07-03 01:40:36] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - validate - Recommending model registry update

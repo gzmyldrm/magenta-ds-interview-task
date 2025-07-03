@@ -1,0 +1,17 @@
+[2025-07-03 01:43:34] Context impl SQLiteImpl.
+[2025-07-03 01:43:34] Will assume non-transactional DDL.
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Starting drift test data injection using existing feature statistics
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Using 50 existing feature statistics as baseline
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared age: 43.96 → 439.57 (z-score: 26.26)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared contract_lifetime_days: 781.00 → 20407.29 (z-score: 36.21)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared remaining_binding_days: -0.55 → -8.20 (z-score: 0.02)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared has_special_offer: 0.30 → 11.71 (z-score: 22.63)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared is_magenta1_customer: 0.30 → 3.66 (z-score: 6.60)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared available_gb: 25.17 → 261.78 (z-score: 13.58)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Prepared gross_mrc: 37.47 → 749.50 (z-score: 33.62)
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Successfully injected 7 extreme feature statistics
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Injection timestamp: 2025-07-03 01:43:35.064767
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Average z-score: 19.85
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - All z-scores > 2.0: False
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Drift detection sensor should trigger within the next hour!
+[2025-07-03 01:43:35] __ASSET_JOB - ebe827a6-1e10-4024-b22b-9d191df8d6f5 - inject_drift_test_data - Monitor the sensor logs in Dagster UI for drift detection

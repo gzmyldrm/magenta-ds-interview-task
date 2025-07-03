@@ -1,0 +1,14 @@
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Starting model tuning process
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Loading processed features and labels from database
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Loaded 1000 feature records
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Using 51 features for training
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Dataset shape: X=(1000, 51), y=(1000,)
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Target distribution: [932  68]
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Train set: (800, 51), Test set: (200, 51)
+[2025-07-03 00:27:24] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Starting hyperparameter tuning with Optuna
+[2025-07-03 00:27:35] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Hyperparameter tuning completed with 2 trials
+[2025-07-03 00:27:35] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Best CV score: 0.0000
+[2025-07-03 00:27:35] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Best parameters: {'n_estimators': 978, 'max_depth': 12, 'min_samples_split': 9, 'min_samples_leaf': 10, 'min_weight_fraction_leaf': 0.2877875263697933, 'max_features': 'sqrt', 'max_samples': 0.26134689807289, 'max_leaf_nodes': 123, 'class_weight': None}
+[2025-07-03 00:27:35] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Training final model with best parameters
+[2025-07-03 00:27:36] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Model training completed successfully
+[2025-07-03 00:27:36] __ASSET_JOB - 530d708c-56c3-4ccc-bbe9-7525cf69a6b2 - tune - Tuning completed - CV F1 Score: 0.0000

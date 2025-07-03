@@ -1,0 +1,6 @@
+[2025-07-02 18:39:36] Context impl SQLiteImpl.
+[2025-07-02 18:39:36] Will assume non-transactional DDL.
+[2025-07-02 18:39:37] __ASSET_JOB - 50e7f389-15e5-462f-87d5-b083c0936eb3 - processed_features - Starting feature engineering for processed_features
+[2025-07-02 18:39:37] __ASSET_JOB - 50e7f389-15e5-462f-87d5-b083c0936eb3 - processed_features - Using polars data from ingestion assets
+[2025-07-02 18:39:37] __ASSET_JOB - 50e7f389-15e5-462f-87d5-b083c0936eb3 - processed_features - Processing data - Core: 1000, Usage: 4000, Interactions: 626
+[2025-07-02 18:39:37] __ASSET_JOB - 50e7f389-15e5-462f-87d5-b083c0936eb3 - processed_features - Initializing ETL pipeline

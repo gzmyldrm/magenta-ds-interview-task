@@ -1,0 +1,12 @@
+[2025-07-02 23:40:26] Context impl SQLiteImpl.
+[2025-07-02 23:40:26] Will assume non-transactional DDL.
+[2025-07-02 23:40:26] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Starting prediction generation
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Using model: ID: model_001
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Processing 1000 feature records for prediction
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Using 49 features for prediction
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Generating predictions with model
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Generated 1000 predictions
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Positive predictions: 393 (39.300%)
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Storing predictions in database
+[2025-07-02 23:40:27] __ASSET_JOB - 9c4282e8-4535-41e8-b82b-ae6c90e0d335 - predictions - Error during prediction generation: Catalog Error: Table with name predictions does not exist!
+Did you mean "database.predictions"?

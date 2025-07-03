@@ -1,0 +1,24 @@
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - LOGS_CAPTURED - Started capturing logs in process (pid: 643277).
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - STEP_START - Started execution of step "core_data".
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - Age
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - contract_lifetime_days
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - remaining_binding_days
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - has_special_offer
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - available_gb
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - gross_mrc
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - smartphone_brand
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - 0.428
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mINFO[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - Create df
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - STEP_OUTPUT - Yielded output "rating_account_id" of type "Any". (Type check passed).
+[32m2025-07-03 01:18:14 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/rating_account_id using PickledObjectFilesystemIOManager...
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - ASSET_MATERIALIZATION - Materialized value rating_account_id.
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - HANDLED_OUTPUT - Handled output "rating_account_id" using IO manager "io_manager"
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - STEP_OUTPUT - Yielded output "unique_customer_ids" of type "Any". (Type check passed).
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/unique_customer_ids using PickledObjectFilesystemIOManager...
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - ASSET_MATERIALIZATION - Materialized value unique_customer_ids.
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - HANDLED_OUTPUT - Handled output "unique_customer_ids" using IO manager "io_manager"
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - STEP_OUTPUT - Yielded output "core_data" of type "Any". (Type check passed).
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - core_data - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/core_data using PickledObjectFilesystemIOManager...
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - ASSET_MATERIALIZATION - Materialized value core_data.
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - HANDLED_OUTPUT - Handled output "core_data" using IO manager "io_manager"
+[32m2025-07-03 01:18:15 +0000[0m - dagster - [34mDEBUG[0m - master_pipeline_job - 3b0a45a6-85de-47eb-b472-2a1f8e564dc3 - 643277 - core_data - STEP_SUCCESS - Finished execution of step "core_data" in 929ms.

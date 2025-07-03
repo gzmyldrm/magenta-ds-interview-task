@@ -1,0 +1,3 @@
+[2025-07-02 17:44:24] Context impl SQLiteImpl.
+[2025-07-02 17:44:24] Will assume non-transactional DDL.
+[2025-07-02 17:44:25] __ASSET_JOB - 8f8ddf69-5028-4420-96e4-0263fd6dcd5e - labels_ingestion - Starting labels ingestion

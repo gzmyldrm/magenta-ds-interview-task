@@ -1,0 +1,5 @@
+[2025-07-03 01:35:02] Context impl SQLiteImpl.
+[2025-07-03 01:35:02] Will assume non-transactional DDL.
+[2025-07-03 01:35:02] master_pipeline_job - 12bd723b-0aea-44a4-8b3a-a0861ec501d8 - raw_core_data - Processing raw core data
+[2025-07-03 01:35:02] master_pipeline_job - 12bd723b-0aea-44a4-8b3a-a0861ec501d8 - raw_core_data - Storing raw core data in database
+[2025-07-03 01:35:03] master_pipeline_job - 12bd723b-0aea-44a4-8b3a-a0861ec501d8 - raw_core_data - Stored 10000 core data records

@@ -1,0 +1,13 @@
+[32m2025-07-02 18:25:44 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - LOGS_CAPTURED - Started capturing logs in process (pid: 143140).
+[32m2025-07-02 18:25:44 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - STEP_START - Started execution of step "raw_labels".
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/core_data using PickledObjectFilesystemIOManager...
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - LOADED_INPUT - Loaded input "core_data" using input manager "io_manager", from output "core_data" of step "core_data"
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - STEP_INPUT - Got input "core_data" of type "Any". (Type check passed).
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Processing labels
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Storing labels in database
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Stored 1000 label records
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/raw_labels using PickledObjectFilesystemIOManager...
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - ASSET_MATERIALIZATION - Materialized value raw_labels.
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-07-02 18:25:45 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - 143140 - raw_labels - STEP_SUCCESS - Finished execution of step "raw_labels" in 432ms.

@@ -1,0 +1,27 @@
+[32m2025-07-02 23:22:42 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6a6d1109-e591-4be2-bdee-6acb92c479f1 - 298835 - LOGS_CAPTURED - Started capturing logs in process (pid: 298835).
+[32m2025-07-02 23:22:42 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6a6d1109-e591-4be2-bdee-6acb92c479f1 - 298835 - current_model - STEP_START - Started execution of step "current_model".
+[32m2025-07-02 23:22:42 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 6a6d1109-e591-4be2-bdee-6acb92c479f1 - current_model - Loading current deployed model from model registry
+[32m2025-07-02 23:22:42 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 6a6d1109-e591-4be2-bdee-6acb92c479f1 - 298835 - current_model - STEP_FAILURE - Execution of step "current_model" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "current_model"::
+
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+
+Stack Trace:
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/predict.py", line 50, in current_model
+    if not result:
+           ^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/pandas/core/generic.py", line 1577, in __nonzero__
+    raise ValueError(
+[0m

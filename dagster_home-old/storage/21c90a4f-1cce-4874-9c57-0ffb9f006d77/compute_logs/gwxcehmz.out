@@ -1,0 +1,11 @@
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - Age
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - contract_lifetime_days
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - remaining_binding_days
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - has_special_offer
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - available_gb
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - gross_mrc
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - smartphone_brand
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - 0.407
+[2025-07-02 17:47:49] __ASSET_JOB - 21c90a4f-1cce-4874-9c57-0ffb9f006d77 - core_data - Create df
+[2025-07-02 17:47:49] Context impl SQLiteImpl.
+[2025-07-02 17:47:49] Will assume non-transactional DDL.

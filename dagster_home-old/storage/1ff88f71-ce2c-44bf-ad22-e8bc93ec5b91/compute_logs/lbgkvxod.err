@@ -1,0 +1,35 @@
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - LOGS_CAPTURED - Started capturing logs in process (pid: 375099).
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - STEP_START - Started execution of step "actions".
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/current_model using PickledObjectFilesystemIOManager...
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - LOADED_INPUT - Loaded input "current_model" using input manager "io_manager"
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/predictions using PickledObjectFilesystemIOManager...
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - LOADED_INPUT - Loaded input "predictions" using input manager "io_manager"
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - STEP_INPUT - Got input "current_model" of type "Any". (Type check passed).
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - STEP_INPUT - Got input "predictions" of type "Any". (Type check passed).
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Starting actions generation
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Using model ID: model_001
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Found 393 positive predictions out of 1000 total predictions
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - actions - Checking for recently actioned customers/contracts
+[32m2025-07-02 23:45:38 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 1ff88f71-ce2c-44bf-ad22-e8bc93ec5b91 - 375099 - actions - STEP_FAILURE - Execution of step "actions" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "actions"::
+
+duckdb.duckdb.InvalidInputException: Invalid Input Error: Python Object "actions" of type "AssetsDefinition" found on line "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/actions.py:80" not suitable for replacement scans.
+Make sure that "actions" is either a pandas.DataFrame, duckdb.DuckDBPyRelation, pyarrow Table, Dataset, RecordBatchReader, Scanner, or NumPy ndarrays with supported format
+
+Stack Trace:
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/actions.py", line 80, in actions
+    recent_actions = conn.execute(recent_actions_query, [cutoff_date]).fetchall()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

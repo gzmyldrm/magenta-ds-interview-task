@@ -1,0 +1,19 @@
+[32m2025-07-03 00:36:27 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - LOGS_CAPTURED - Started capturing logs in process (pid: 542085).
+[32m2025-07-03 00:36:27 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - STEP_START - Started execution of step "validate".
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/tune using PickledObjectFilesystemIOManager...
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - LOADED_INPUT - Loaded input "tune" using input manager "io_manager", from output "result" of step "tune"
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - STEP_INPUT - Got input "tune" of type "Any". (Type check passed).
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Starting model validation process
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Evaluating new model on test set
+/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - New model metrics: F1=0.0000, Accuracy=0.9300, Precision=0.0000, Recall=0.0000
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Evaluating current model on test set
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Current model metrics: F1=0.1667, Accuracy=0.6000, Precision=0.0976, Recall=0.5714
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Current model performs better. F1 difference: -0.1667
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - No model update recommended
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - validate - Writing file at: /workspaces/data-scientist-at-magenta/dagster_home/storage/validate using PickledObjectFilesystemIOManager...
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - ASSET_MATERIALIZATION - Materialized value validate.
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-07-03 00:36:28 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - 542085 - validate - STEP_SUCCESS - Finished execution of step "validate" in 669ms.

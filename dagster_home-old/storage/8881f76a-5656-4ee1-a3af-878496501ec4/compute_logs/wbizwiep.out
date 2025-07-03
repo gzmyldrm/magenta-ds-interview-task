@@ -1,0 +1,10 @@
+[2025-07-03 01:40:39] Context impl SQLiteImpl.
+[2025-07-03 01:40:39] Will assume non-transactional DDL.
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update - Starting model registry update process
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update - Storing new model in registry
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update - Marked old model model_001 as retired
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update - Successfully deployed new model 2cdae344-46d2-4fba-9bb3-d66ed20fa519
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update -    Model: RandomForest-General v20250703_014039
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update -    F1 Score: 0.1551
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update -    Status: deployed (current model)
+[2025-07-03 01:40:39] training_pipeline_job - 8881f76a-5656-4ee1-a3af-878496501ec4 - model_registry_update - Model registry update verified: ('2cdae344-46d2-4fba-9bb3-d66ed20fa519', 'RandomForest-General', 'v20250703_014039', 'deployed', True)

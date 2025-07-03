@@ -1,0 +1,33 @@
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - 279115 - LOGS_CAPTURED - Started capturing logs in process (pid: 279115).
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - 279115 - feature_statistics - STEP_START - Started execution of step "feature_statistics".
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Loading file from: /workspaces/data-scientist-at-magenta/dagster_home/storage/processed_features using PickledObjectFilesystemIOManager...
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - 279115 - feature_statistics - LOADED_INPUT - Loaded input "processed_features" using input manager "io_manager"
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - 279115 - feature_statistics - STEP_INPUT - Got input "processed_features" of type "Any". (Type check passed).
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Starting feature statistics calculation
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Using processed features asset
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Loaded 1000 processed feature records
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Computing feature statistics
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Computing statistics for 50 numerical features
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mINFO[0m - __ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - feature_statistics - Storing feature statistics in database
+[32m2025-07-02 23:16:16 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - c5828f1f-1c7b-4f4a-a827-0f03eb5a9a34 - 279115 - feature_statistics - STEP_FAILURE - Execution of step "feature_statistics" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "feature_statistics"::
+
+duckdb.duckdb.InvalidInputException: Invalid Input Error: Python Object "feature_statistics" of type "AssetsDefinition" found on line "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/feature_engineering.py:151" not suitable for replacement scans.
+Make sure that "feature_statistics" is either a pandas.DataFrame, duckdb.DuckDBPyRelation, pyarrow Table, Dataset, RecordBatchReader, Scanner, or NumPy ndarrays with supported format
+
+Stack Trace:
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/.pixi/envs/ci-validation/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/assets/feature_engineering.py", line 151, in feature_statistics
+    conn.execute("DELETE FROM feature_statistics WHERE computation_timestamp = CURRENT_TIMESTAMP")
+[0m

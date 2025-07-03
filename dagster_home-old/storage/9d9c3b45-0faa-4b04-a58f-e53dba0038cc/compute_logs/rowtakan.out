@@ -1,0 +1,5 @@
+[2025-07-03 01:34:02] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - current_model - Loading current deployed model from model registry
+[2025-07-03 01:34:02] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - current_model - Found current model: RandomForest-General v1.0 (ID: model_001)
+[2025-07-03 01:34:02] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - current_model - Successfully loaded model RandomForest-General v1.0
+[2025-07-03 01:34:03] Context impl SQLiteImpl.
+[2025-07-03 01:34:03] Will assume non-transactional DDL.

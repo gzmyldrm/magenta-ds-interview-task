@@ -13,7 +13,11 @@
 "forwardPorts": [3000],
 
 "containerEnv": {
-"DAGSTER_HOME": "/workspaces/data-scientist-at-magenta/dagster_home"
+"DAGSTER_HOME": "/workspaces/data-scientist-at-magenta/dagster_home",
+"DUCKDB_DATABASE": "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/dwh/database.duckdb",
+"PROD_DUCKDB_DATABASE": "/workspaces/data-scientist-at-magenta/src/code_location_interview/code_location_interview/dwh/production_database.duckdb",
+"DAGSTER_DEPLOYMENT": "dev"
+
 },
 
 "extensions": [
@@ -24,10 +28,4 @@
 
 // Use 'postCreateCommand' to run commands after the container is created.
 "postCreateCommand": "pixi global install git && sh .devcontainer/init-git.sh && pixi install -e dev"
-
-// Configure tool-specific properties.
-// "customizations": {},
-
-// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-// "remoteUser": "root"
 }
