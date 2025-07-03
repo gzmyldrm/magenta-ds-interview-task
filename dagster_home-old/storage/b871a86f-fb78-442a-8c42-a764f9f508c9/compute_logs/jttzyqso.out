@@ -1,5 +1,0 @@
-[2025-07-03 01:41:34] Context impl SQLiteImpl.
-[2025-07-03 01:41:34] Will assume non-transactional DDL.
-[2025-07-03 01:41:34] master_pipeline_job - b871a86f-fb78-442a-8c42-a764f9f508c9 - raw_customer_interactions - Processing raw customer interactions
-[2025-07-03 01:41:35] master_pipeline_job - b871a86f-fb78-442a-8c42-a764f9f508c9 - raw_customer_interactions - Storing raw customer interactions in database
-[2025-07-03 01:41:35] master_pipeline_job - b871a86f-fb78-442a-8c42-a764f9f508c9 - raw_customer_interactions - Stored 6370 interaction records

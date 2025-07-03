@@ -1,4 +1,0 @@
-[2025-07-02 17:58:00] Context impl SQLiteImpl.
-[2025-07-02 17:58:00] Will assume non-transactional DDL.
-[2025-07-02 17:58:00] __ASSET_JOB - 14d0ddf2-d856-4dfa-aed9-a3ba6930b9b1 - raw_data_ingestion - Starting raw data ingestion
-[2025-07-02 17:58:26] __ASSET_JOB - 14d0ddf2-d856-4dfa-aed9-a3ba6930b9b1 - raw_data_ingestion - Storing raw core data

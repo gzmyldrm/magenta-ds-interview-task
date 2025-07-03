@@ -1,7 +1,0 @@
-[2025-07-02 17:59:29] Context impl SQLiteImpl.
-[2025-07-02 17:59:29] Will assume non-transactional DDL.
-[2025-07-02 17:59:29] __ASSET_JOB - 13e3d415-c36e-4316-b693-3b9a03fc5fe4 - labels_ingestion - Starting labels ingestion
-[2025-07-02 17:59:29] __ASSET_JOB - 13e3d415-c36e-4316-b693-3b9a03fc5fe4 - labels_ingestion - Storing labels
-[2025-07-02 17:59:29] __ASSET_JOB - 13e3d415-c36e-4316-b693-3b9a03fc5fe4 - labels_ingestion - Labels ingestion completed:
-[2025-07-02 17:59:29] __ASSET_JOB - 13e3d415-c36e-4316-b693-3b9a03fc5fe4 - labels_ingestion -   - New labels added: 1000
-[2025-07-02 17:59:29] __ASSET_JOB - 13e3d415-c36e-4316-b693-3b9a03fc5fe4 - labels_ingestion -   - Total labels: 1000 records

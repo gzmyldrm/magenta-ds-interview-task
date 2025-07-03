@@ -1,5 +1,0 @@
-[2025-07-02 18:25:40] Context impl SQLiteImpl.
-[2025-07-02 18:25:40] Will assume non-transactional DDL.
-[2025-07-02 18:25:41] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_core_data - Processing raw core data
-[2025-07-02 18:25:41] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_core_data - Storing raw core data in database
-[2025-07-02 18:25:41] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_core_data - Stored 1000 core data records

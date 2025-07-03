@@ -1,4 +1,0 @@
-[2025-07-02 23:12:21] __ASSET_JOB - 0fc738e6-8979-4b67-ab1d-90969dcd1102 - current_model - Loading current deployed model from model registry
-[2025-07-02 23:12:21] __ASSET_JOB - 0fc738e6-8979-4b67-ab1d-90969dcd1102 - current_model - model_registry table does not exist in database!
-[2025-07-02 23:12:21] __ASSET_JOB - 0fc738e6-8979-4b67-ab1d-90969dcd1102 - current_model - Available tables: []
-[2025-07-02 23:12:21] __ASSET_JOB - 0fc738e6-8979-4b67-ab1d-90969dcd1102 - current_model - Error checking database tables: model_registry table not found. Please run the database initialization script: python init_database.py

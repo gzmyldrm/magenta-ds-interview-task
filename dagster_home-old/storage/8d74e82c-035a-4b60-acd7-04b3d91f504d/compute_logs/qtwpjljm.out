@@ -1,5 +1,0 @@
-[2025-07-03 00:33:01] Context impl SQLiteImpl.
-[2025-07-03 00:33:01] Will assume non-transactional DDL.
-[2025-07-03 00:33:01] __ASSET_JOB - 8d74e82c-035a-4b60-acd7-04b3d91f504d - model_registry_update - Starting model registry update process
-[2025-07-03 00:33:01] __ASSET_JOB - 8d74e82c-035a-4b60-acd7-04b3d91f504d - model_registry_update - Storing new model in registry
-[2025-07-03 00:33:01] __ASSET_JOB - 8d74e82c-035a-4b60-acd7-04b3d91f504d - model_registry_update - Error updating model registry: Conversion Error: Malformed JSON at byte 1 of input: unexpected character.  Input: {'model_type': 'RandomForestClassifier', 'hyper...

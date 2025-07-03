@@ -1,9 +1,0 @@
-[2025-07-03 00:36:31] Context impl SQLiteImpl.
-[2025-07-03 00:36:31] Will assume non-transactional DDL.
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update - Starting model registry update process
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update - Storing new model in registry
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update - Successfully stored new model 1117f417-7fda-4474-80ce-c58bc4ad736e
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update -    Model: RandomForest-General v20250703_003631
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update -    F1 Score: 0.0000
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update -    Status: trained (not deployed - current model performs better)
-[2025-07-03 00:36:31] __ASSET_JOB - 7ae309a2-dea1-4a66-abaa-973284ac8f1d - model_registry_update - Model registry update verified: ('1117f417-7fda-4474-80ce-c58bc4ad736e', 'RandomForest-General', 'v20250703_003631', 'trained', False)

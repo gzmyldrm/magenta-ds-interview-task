@@ -1,8 +1,0 @@
-[2025-07-02 18:47:14] Context impl SQLiteImpl.
-[2025-07-02 18:47:14] Will assume non-transactional DDL.
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Starting feature engineering for processed_features
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Using polars data from ingestion assets
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Processing data - Core: 1000, Usage: 4000, Interactions: 626
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Initializing ETL pipeline
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Processing features through ETL pipeline
-[2025-07-02 18:47:15] __ASSET_JOB - e444e040-3445-4e6a-97c8-da22798be4bf - processed_features - Error in ETL processing: 'ContractFeatureETL' object has no attribute 'run_transform'

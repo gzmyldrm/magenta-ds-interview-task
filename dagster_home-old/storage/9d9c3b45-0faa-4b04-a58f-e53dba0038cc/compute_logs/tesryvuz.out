@@ -1,5 +1,0 @@
-[2025-07-03 01:34:12] Context impl SQLiteImpl.
-[2025-07-03 01:34:12] Will assume non-transactional DDL.
-[2025-07-03 01:34:12] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - raw_labels - Processing labels
-[2025-07-03 01:34:12] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - raw_labels - Storing labels in database
-[2025-07-03 01:34:12] master_pipeline_job - 9d9c3b45-0faa-4b04-a58f-e53dba0038cc - raw_labels - Stored 10000 label records

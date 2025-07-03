@@ -1,5 +1,0 @@
-[2025-07-02 18:25:44] Context impl SQLiteImpl.
-[2025-07-02 18:25:44] Will assume non-transactional DDL.
-[2025-07-02 18:25:45] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Processing labels
-[2025-07-02 18:25:45] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Storing labels in database
-[2025-07-02 18:25:45] __ASSET_JOB - b5703541-2035-4e54-a3f3-4c2b31e49f3c - raw_labels - Stored 1000 label records

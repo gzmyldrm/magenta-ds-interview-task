@@ -1,7 +1,0 @@
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Starting model tuning process
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Loading processed features and labels from database
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Loaded 1000 feature records
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Using 51 features for training
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Dataset shape: (1000, 51), Target distribution: [932  68]
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Train set: (800, 51), Test set: (200, 51)
-[2025-07-03 00:25:02] __ASSET_JOB - 4d0e9a3c-2417-49e6-accb-f1a4321a78ea - tune - Starting hyperparameter tuning with Optuna

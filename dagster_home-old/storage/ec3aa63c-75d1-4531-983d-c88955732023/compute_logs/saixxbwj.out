@@ -1,5 +1,0 @@
-[2025-07-03 00:34:29] Context impl SQLiteImpl.
-[2025-07-03 00:34:29] Will assume non-transactional DDL.
-[2025-07-03 00:34:30] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - model_registry_update - Starting model registry update process
-[2025-07-03 00:34:30] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - model_registry_update - Storing new model in registry
-[2025-07-03 00:34:30] __ASSET_JOB - ec3aa63c-75d1-4531-983d-c88955732023 - model_registry_update - Error updating model registry: dump() missing 1 required positional argument: 'fp'

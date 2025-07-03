@@ -1,8 +1,0 @@
-[2025-07-02 23:34:50] Context impl SQLiteImpl.
-[2025-07-02 23:34:50] Will assume non-transactional DDL.
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Starting prediction generation
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Using model: ID: model_001
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Processing 1000 feature records for prediction
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Using 49 features for prediction
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Generating predictions with model
-[2025-07-02 23:34:50] __ASSET_JOB - c3853996-7440-4b4d-943a-7f8e16eff368 - predictions - Error during prediction generation: X has 49 features, but RandomForestClassifier is expecting 80 features as input.

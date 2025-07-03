@@ -1,5 +1,0 @@
-[2025-07-02 23:37:03] __ASSET_JOB - 6fce1193-7715-4b45-9ef8-b5de6c33535b - current_model - Loading current deployed model from model registry
-[2025-07-02 23:37:16] __ASSET_JOB - 6fce1193-7715-4b45-9ef8-b5de6c33535b - current_model - Found current model: RandomForest-General v1.0 (ID: model_001)
-[2025-07-02 23:37:16] __ASSET_JOB - 6fce1193-7715-4b45-9ef8-b5de6c33535b - current_model - Successfully loaded model RandomForest-General v1.0
-[2025-07-02 23:37:16] Context impl SQLiteImpl.
-[2025-07-02 23:37:16] Will assume non-transactional DDL.
