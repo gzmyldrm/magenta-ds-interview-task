@@ -23,6 +23,95 @@ logger = get_dagster_logger(__name__)
 group_name = "training"
 
 
+def _store_feature_importance(conn, model_id, model, logger):
+    """
+    Store feature importance for a deployed Random Forest model.
+    
+    Args:
+        conn: Database connection
+        model_id: Unique identifier for the model
+        model: Trained RandomForest model
+        logger: Logger instance
+    """
+    logger.info("Extracting feature importance from Random Forest model")
+    
+    # Define the feature columns in the same order as used in training
+    # These should match the feature_columns from the tune() function
+    feature_columns = [
+        'age', 'contract_lifetime_days', 'remaining_binding_days', 'has_special_offer',
+        'is_magenta1_customer', 'available_gb', 'gross_mrc', 'completion_rate', 'is_bounded',
+        'is_huawei', 'is_oneplus', 'is_samsung', 'is_xiaomi', 'is_iphone',
+        'n_contracts_per_customer', 'avg_monthly_usage_gb', 'total_usage_gb',
+        'max_monthly_usage_gb', 'months_with_roaming', 'ever_used_roaming',
+        'active_usage_months', 'months_with_no_delta_1mo_change', 'avg_delta_2mo',
+        'delta_2mo_volatility', 'max_delta_2mo_increase', 'max_delta_2mo_decrease',
+        'months_with_delta_2mo_increase', 'months_with_no_delta_2mo_change',
+        'months_with_delta_3mo_increase', 'months_with_no_delta_3mo_change',
+        'last_1_delta_1mo', 'last_2_delta_1mo', 'last_3_delta_1mo',
+        'last_1_delta_2mo', 'last_2_delta_2mo', 'last_1_delta_3mo',
+        'n_rechnungsanfragen', 'n_produkte_services_tarifdetails', 'n_prolongation',
+        'n_produkte_services_tarifwechsel', 'days_since_last_rechnungsanfragen',
+        'days_since_last_produkte_services_tarifdetails', 'days_since_last_prolongation',
+        'days_since_last_produkte_services_tarifwechsel', 'times_in_p1', 'times_in_p2',
+        'times_in_p3', 'times_in_p4', 'times_in_p5'
+    ]
+    
+    try:
+        # Get feature importance from Random Forest model
+        if hasattr(model, 'feature_importances_'):
+            feature_importances = model.feature_importances_
+            logger.info("Successfully extracted feature importances from Random Forest model")
+        else:
+            raise ValueError(f"Model {type(model)} does not have feature_importances_ attribute")
+        
+        # Verify that we have the right number of feature importances
+        if len(feature_importances) != len(feature_columns):
+            logger.warning(f"Mismatch between expected features ({len(feature_columns)}) and "
+                          f"actual feature importances ({len(feature_importances)})")
+            # Adjust feature_columns to match actual importance length
+            if len(feature_importances) < len(feature_columns):
+                feature_columns = feature_columns[:len(feature_importances)]
+            else:
+                # Pad with None if we have more importances than expected features
+                feature_columns.extend([f"unknown_feature_{i}" for i in range(len(feature_columns), len(feature_importances))])
+        
+        logger.info("Preparing feature importance data for storage")
+        
+        # Create importance data structure
+        importance_data = {
+            "model_id": model_id,
+        }
+        
+        # Add individual feature importance columns
+        for i, feature_name in enumerate(feature_columns):
+            importance_column_name = f"{feature_name}_importance"
+            importance_data[importance_column_name] = feature_importances[i]
+        
+        # Create Polars DataFrame with feature importance
+        importance_df = pl.DataFrame([importance_data])
+        
+        logger.info("Storing feature importance in database")
+        
+        # Store feature importance in database
+        conn.execute("INSERT INTO features_importance SELECT * FROM importance_df")
+        
+        # Log top 5 most important features
+        feature_importance_pairs = list(zip(feature_columns, feature_importances))
+        feature_importance_pairs.sort(key=lambda x: x[1], reverse=True)
+        logger.info("Top 5 most important features:")
+        for i, (feature, importance) in enumerate(feature_importance_pairs[:5]):
+            logger.info(f"  {i+1}. {feature}: {importance:.4f}")
+        
+        logger.info("Feature importance storage completed successfully")
+        
+    except Exception as e:
+        logger.error(f"Error storing feature importance: {str(e)}")
+        logger.error(f"Model type: {type(model)}")
+        if hasattr(model, '__dict__'):
+            logger.error(f"Model attributes: {list(model.__dict__.keys())}")
+        raise
+
+
 def random_forest_objective(trial, X, y, skf, n_splits=5):
     """
     Random Forest objective function using stratified cross-validation
@@ -200,7 +289,7 @@ def tune(database: DuckDBResource):
         )
         
         # Number of trials for tuning
-        n_trials = 10  # Reduced from notebook for faster retraining
+        n_trials = 2  # Reduced from notebook for faster retraining
         
         study.optimize(
             lambda trial: random_forest_objective(trial, X_train, y_train, skf), 
@@ -418,6 +507,11 @@ def model_registry_update(validate, database: DuckDBResource):
                 model_status,  # status: 'deployed' or 'trained'
                 is_current  # is_current_model: True if deploying, False if just storing
             ])
+            
+            # If deploying the model, compute and store feature importance
+            if should_update:
+                logger.info("Computing feature importance for deployed model")
+                _store_feature_importance(conn, new_model_id, validate['new_model'], logger)
             
             # Commit transaction
             conn.commit()

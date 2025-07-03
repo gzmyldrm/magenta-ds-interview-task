@@ -59,7 +59,6 @@ def raw_usage_info(usage_info, database: DuckDBResource):
     """
     logger.info("Processing raw usage info")
     
-    # Store in database for audit/storage purposes
     with database.get_connection() as conn:
         logger.info("Storing raw usage info in database")
         conn.execute("""
@@ -86,7 +85,6 @@ def raw_customer_interactions(customer_interactions, database: DuckDBResource):
     """
     logger.info("Processing raw customer interactions")
     
-    # Store in database for audit/storage purposes
     with database.get_connection() as conn:
         logger.info("Storing raw customer interactions in database")
         conn.execute("""
@@ -113,7 +111,6 @@ def raw_labels(core_data, database: DuckDBResource):
     """
     logger.info("Processing labels")
     
-    # Store in database for audit/storage purposes
     with database.get_connection() as conn:
         logger.info("Storing labels in database")
         conn.execute("""
@@ -127,5 +124,6 @@ def raw_labels(core_data, database: DuckDBResource):
     # Extract labels for downstream consumption
     labels_df = core_data[['rating_account_id', 'has_done_upselling']].copy()
     labels_df = labels_df.rename(columns={'has_done_upselling': 'target_label'})
-    
+
+    # Return the asset for downstream consumption
     return pl.from_pandas(labels_df)

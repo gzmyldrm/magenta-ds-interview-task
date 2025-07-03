@@ -219,6 +219,89 @@ def create_prediction_tables(conn: duckdb.DuckDBPyConnection) -> None:
     """)
 
 
+def create_feature_importance_tables(conn: duckdb.DuckDBPyConnection) -> None:
+    """Create feature importance table with individual columns for each feature."""
+    
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS features_importance (
+            prediction_id VARCHAR PRIMARY KEY,
+            rating_account_id VARCHAR NOT NULL,
+            customer_id VARCHAR NOT NULL,
+            model_id VARCHAR NOT NULL,
+            
+            -- Feature importance scores (matching processed_features structure)
+            age_importance DOUBLE,
+            contract_lifetime_days_importance DOUBLE,
+            remaining_binding_days_importance DOUBLE,
+            has_special_offer_importance DOUBLE,
+            is_magenta1_customer_importance DOUBLE,
+            available_gb_importance DOUBLE,
+            gross_mrc_importance DOUBLE,
+            has_done_upselling_importance DOUBLE,
+            completion_rate_importance DOUBLE,
+            is_bounded_importance DOUBLE,
+            
+            -- Device brand importance
+            is_huawei_importance DOUBLE,
+            is_oneplus_importance DOUBLE,
+            is_samsung_importance DOUBLE,
+            is_xiaomi_importance DOUBLE,
+            is_iphone_importance DOUBLE,
+            
+            -- Customer aggregations importance
+            n_contracts_per_customer_importance DOUBLE,
+            
+            -- Usage statistics importance
+            avg_monthly_usage_gb_importance DOUBLE,
+            total_usage_gb_importance DOUBLE,
+            max_monthly_usage_gb_importance DOUBLE,
+            months_with_roaming_importance DOUBLE,
+            ever_used_roaming_importance DOUBLE,
+            active_usage_months_importance DOUBLE,
+            
+            -- Usage trends importance
+            months_with_no_delta_1mo_change_importance DOUBLE,
+            avg_delta_2mo_importance DOUBLE,
+            delta_2mo_volatility_importance DOUBLE,
+            max_delta_2mo_increase_importance DOUBLE,
+            max_delta_2mo_decrease_importance DOUBLE,
+            months_with_delta_2mo_increase_importance DOUBLE,
+            months_with_no_delta_2mo_change_importance DOUBLE,
+            months_with_delta_3mo_increase_importance DOUBLE,
+            months_with_no_delta_3mo_change_importance DOUBLE,
+            
+            -- Recent usage deltas importance
+            last_1_delta_1mo_importance DOUBLE,
+            last_2_delta_1mo_importance DOUBLE,
+            last_3_delta_1mo_importance DOUBLE,
+            last_1_delta_2mo_importance DOUBLE,
+            last_2_delta_2mo_importance DOUBLE,
+            last_1_delta_3mo_importance DOUBLE,
+            
+            -- Customer service interactions importance
+            n_rechnungsanfragen_importance DOUBLE,
+            n_produkte_services_tarifdetails_importance DOUBLE,
+            n_prolongation_importance DOUBLE,
+            n_produkte_services_tarifwechsel_importance DOUBLE,
+            days_since_last_rechnungsanfragen_importance DOUBLE,
+            days_since_last_produkte_services_tarifdetails_importance DOUBLE,
+            days_since_last_prolongation_importance DOUBLE,
+            days_since_last_produkte_services_tarifwechsel_importance DOUBLE,
+            
+            -- Usage percentile features importance
+            times_in_p1_importance DOUBLE,
+            times_in_p2_importance DOUBLE,
+            times_in_p3_importance DOUBLE,
+            times_in_p4_importance DOUBLE,
+            times_in_p5_importance DOUBLE,
+            
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            
+            FOREIGN KEY (prediction_id) REFERENCES predictions(prediction_id)
+        )
+    """)
+
+
 def create_actions_tables(conn: duckdb.DuckDBPyConnection) -> None:
     """Create actions tracking tables."""
     
@@ -243,44 +326,6 @@ def create_actions_tables(conn: duckdb.DuckDBPyConnection) -> None:
             FOREIGN KEY (prediction_id) REFERENCES predictions(prediction_id)
         )
     """)
-
-
-# def create_indexes(conn: duckdb.DuckDBPyConnection) -> None:
-#     """Create indexes for performance optimization."""
-    
-#     print("Creating performance indexes...")
-    
-#     # Raw data indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_raw_core_customer ON raw_core_data(customer_id)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_raw_usage_account_date ON raw_usage_info(rating_account_id, billed_period_month_d)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_raw_interactions_customer ON raw_customer_interactions(customer_id)")
-    
-#     # Feature table indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_features_customer ON processed_features(customer_id)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_features_created ON processed_features(created_at)")
-    
-#     # Feature statistics indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_feature_stats_name_date ON feature_statistics(feature_name, computation_date)")
-    
-#     # Model registry indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_model_name_version ON model_registry(model_name, version)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_model_status ON model_registry(status)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_model_current ON model_registry(is_current_model)")
-    
-#     # Prediction indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_predictions_account ON predictions(rating_account_id)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_predictions_timestamp ON predictions(prediction_timestamp)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_predictions_model ON predictions(model_id)")
-    
-#     # Monitoring indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_drift_alerts_type_status ON drift_alerts(alert_type, status)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_drift_alerts_created ON drift_alerts(created_at)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_performance_model_date ON model_performance(model_id, evaluation_start_date)")
-    
-#     # Job monitoring indexes
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_job_logs_name_status ON job_execution_logs(job_name, status)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_job_logs_timestamp ON job_execution_logs(start_timestamp)")
-#     conn.execute("CREATE INDEX IF NOT EXISTS idx_sensor_status_type ON sensor_status(sensor_type)")
 
 
 def create(db_path: Optional[str] = None) -> None:
@@ -311,7 +356,10 @@ def create(db_path: Optional[str] = None) -> None:
         
         print("Creating prediction tables...")
         create_prediction_tables(conn)
-
+        
+        print("Creating feature importance tables...")
+        create_feature_importance_tables(conn)
+        
         print("Creating actions tables...")
         create_actions_tables(conn)
         

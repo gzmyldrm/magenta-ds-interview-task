@@ -18,7 +18,6 @@ group_name = "actions"
 @asset(
     group_name=group_name,
     deps=["predictions", "current_model"],
-    description="Generate actions for positive predictions, excluding recently actioned customers"
 )
 def actions_activities(predictions, current_model, database: DuckDBResource):
     """
@@ -89,7 +88,7 @@ def actions_activities(predictions, current_model, database: DuckDBResource):
             def is_not_recently_actioned(customer_id: str, rating_account_id: str) -> bool:
                 return (customer_id, rating_account_id) not in recently_actioned
             
-            # Apply filter using polars
+            # Apply filter
             eligible_predictions = positive_predictions.filter(
                 pl.struct(["customer_id", "rating_account_id"])
                 .map_elements(lambda x: is_not_recently_actioned(x["customer_id"], x["rating_account_id"]))

@@ -25,7 +25,7 @@ group_name = "feature_engineering"
 )
 def processed_features(raw_core_data, raw_usage_info, raw_customer_interactions, database: DuckDBResource):
     """
-    Process raw data through ETL pipeline to create ML-ready features.
+    Process raw data through ETL pipeline to create ready features.
     
     Uses raw data assets directly, processes through ETL pipeline,
     and stores processed features back to database.
